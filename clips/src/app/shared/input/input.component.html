@@ -4,7 +4,7 @@ duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
  [placeholder]= "placeholder"/>
 <ng-container *ngIf="control.touched && control.dirty">
     <p  class="text-red-400" *ngIf ="control.errors?.['pattern']"> 
-  assword contain at leate 8 characters long, 1 uppercase, 1 lowercase, 1 special  and 1 number
+  password contain at leate 8 characters long, 1 uppercase, 1 lowercase, 1 special  and 1 number
     </p>
     <p *ngIf="control.errors?.['required']" class="text-red-400">
         field is required

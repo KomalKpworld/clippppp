@@ -6,6 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 
+import {AngularFireModule, FIREBASE_OPTIONS} from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
+import {AngularFireAuthModule} from '@angular/fire/compat/auth';
+
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore'
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,8 +20,14 @@ import { NavComponent } from './nav/nav.component';
     BrowserModule,
     AppRoutingModule,
     UserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule
+  
  ],
-  providers: [],
+  providers:[
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
