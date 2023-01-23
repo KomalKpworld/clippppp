@@ -24,7 +24,7 @@ constructor(
   private route:ActivatedRoute
     ) {
       this.usersCollection = db.collection('users')
-      auth.user.subscribe(console.log)
+      auth.user.subscribe()
       this.isAuthenticated$ = auth.user.pipe(
        map(user => !!user)
       
