@@ -12,7 +12,7 @@ credentials ={
   password:" "
 }
 showAlert = false
-alertMsg = "Please wait ! we  are loged in you "
+alertMsg = "Please wait ! we  are logged you in."
 alertColor = 'blue' 
 inSubmission = false
 constructor(private auth: AngularFireAuth){}
@@ -22,7 +22,6 @@ ngOnInit(): void{
 
 async login(){
   this.showAlert= true
-
   this.alertMsg = "Please wait ! we  are loged in you "
   this.alertColor = 'blue' 
   this.inSubmission= true
@@ -37,7 +36,7 @@ await this.auth.signInWithEmailAndPassword(
   return 
 }
 this.alertMsg = "succed you are now logged in "
-this.alertColor = 'yellow' 
+this.alertColor = 'green' 
 }
 
 }
