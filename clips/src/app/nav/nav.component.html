@@ -2,7 +2,8 @@
  <header id="header" class="bg-secondary">
     <nav class="container mx-auto flex justify-start items-center py-8 px-4">
       <!-- App Name -->
-      <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" href="index.html">Clipz</a>
+      <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" 
+      href="/">Clipz</a>
   
       <div class="flex flex-grow items-center">
         <!-- Primary Navigation -->
@@ -13,20 +14,24 @@
           </li>
           <ng-template #authLinks>
           <li>
-            <a class="px-2" href="#">Manage</a>
+            <a class="px-2" routerLink="/manage" 
+            routerLinkActive="text-indigo-400" 
+            [routerLinkActiveOptions]="{exact: true}"
+            [queryParams]="{sort:'1'}"
+            >Manage</a>
           </li>
           <li>
-            <a class="px-2" href="#">Upload</a>
+            <a class="px-2" routerLink="/upload" routerLinkActive="text-indigo-400"  [routerLinkActiveOptions]="{exact: true}">Upload</a>
           </li>
           <li>
             <a class = "px-2" (click)="logout($event)">logout</a>
           </li>
         </ng-template>
-          <li>
-            <a class="px-2" href="about.html">About</a>
+          <li routerLinkActive="text-indigo-400">
+            <a class="px-2" routerLink="/about" routerLinkActive="text-indigo-400">About</a>
           </li>
         </ul>
-        <!-- Language Switcher -->
+        <!-- Language Switcher
         <ul class="flex flex-row ml-auto">
           <li>
             <a href="#">
@@ -42,7 +47,7 @@
                 <span class="ml-1">French</span>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </nav>
   </header>
