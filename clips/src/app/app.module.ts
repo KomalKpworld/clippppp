@@ -9,7 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import {AngularFireModule, FIREBASE_OPTIONS} from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
-
+import {AngularFireStorageModule} from '@angular/fire/compat/storage'
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -32,6 +32,7 @@ import { NotFoundComponent } from './not-found/not-found.component'
     AngularFirestoreModule,
     VideoModule,
     AppRoutingModule,
+    AngularFireStorageModule
  ],
   providers:[
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
