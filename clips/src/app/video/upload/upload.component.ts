@@ -119,6 +119,7 @@ if(!clipProgress || !screenshotProgress){
     ).subscribe({
       next: async (urls) => {
         const [clipurl, screenshotURL] = urls
+
         const clip = {
           uid: this.user?.uid as string,
           displayName: this.user?.displayName as string,
@@ -126,6 +127,7 @@ if(!clipProgress || !screenshotProgress){
           fileName: `${clipFileName}.mp4`,
           url:clipurl,
           screenshotURL,
+          screenshotFileName : `${clipFileName}.png`,
           timestamp : firebase.firestore.FieldValue.serverTimestamp()
         }
       const clipDocRef=  await this.clipsService.createClip(clip)

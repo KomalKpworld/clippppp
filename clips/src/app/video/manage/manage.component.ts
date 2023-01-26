@@ -69,8 +69,18 @@ this.clips.forEach((element, index) =>{
     this.clipService.deleteClip(clip)
     this.clips.forEach((element, index) =>{
       if(element.docID == clip.docID){
-        this.clips.splice(index,1)
+        this.clips.splice(index,  1)
       }
     })
+  }
+
+  async copyToClipboard($event: MouseEvent, docID: string | undefined){
+    $event.preventDefault()
+    if(!docID){
+      return
+    }
+    const url = `${location.origin}/clip/${docID}`
+    await navigator.clipboard.writeText(url)
+    alert('link is copied in clipboard')
   }
 }
